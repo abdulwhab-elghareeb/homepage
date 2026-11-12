@@ -10,7 +10,10 @@
     <main>
       <header>
         <h1>My name</h1>
-        <img src="./assets/imgs/portrait-placeholder.jpg" alt="" />
+        <picture>
+          <source media="(max-width: 500px)" srcset="./assets/imgs/portrait-small.jpg">
+          <img src="./assets/imgs/portrait-mid.jpg" alt="">
+        </picture>
 
         <div class="about-card">
           <h2>About me</h2>
@@ -137,6 +140,11 @@
             <a href=""><img src="./assets/icons/linkedin.svg" alt="" /></a>
             <a href=""><img src="./assets/icons/twitter.svg" alt="" /></a>
           </div>
+
+          <picture>
+            <source media="(max-width: 500px)" srcset="./assets/imgs/portrait2-small.jpg">
+            <img src="./assets/imgs/portrait2-mid.jpg" alt="">
+          </picture>
         </address>
       </footer>
     </main>
