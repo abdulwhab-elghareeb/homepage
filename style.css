@@ -52,3 +52,103 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display";
+  font-weight: 300;
+}
+
+p {
+  color: hsl(0, 1%, 40%);
+}
+
+:root {
+  --box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 10px 20px -4px,
+    rgba(0, 0, 0, 0.3) 0px 5px 10px -6px;
+}
+body {
+  font-family: "Roboto";
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 3rem;
+}
+
+header {
+  /* This is kinda hacky, so I prefer finding a better way later*/
+  background: linear-gradient(
+    173deg,
+    hsl(192, 91%, 36%),
+    hsl(192, 91%, 36%) 70%,
+    hsl(194, 16%, 79%) 70.2%,
+    hsl(240, 2%, 89%) 70.4%,
+    hsl(0, 0%, 95%) 70.6%,
+    hsl(0, 0%, 97%) 70.8%,
+    white 71%
+  );
+
+  & .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 600px;
+  max-height: fit-content;
+
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+}
+
+.portrait-header {
+  box-shadow: var(--box-shadow);
+}
+
+.portrait {
+  position: relative;
+
+  & h1 {
+    font-size: 3.5rem;
+    color: hsl(0, 0%, 100%);
+
+    position: absolute;
+    bottom: 1rem;
+    /* left 50% moves just the left margin edge of the h1 to the middle 
+       so translateX is used to move the whole elem to the middle
+    */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.about-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-card p {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.contact-links {
+  align-self: flex-end;
+  margin-top: auto;
+
+  display: flex;
+  gap: 1rem;
+}
