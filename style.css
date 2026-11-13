@@ -68,15 +68,15 @@ ul {
   padding: 0;
   list-style: none;
 }
-
 p {
-  color: hsl(0, 1%, 40%);
+  max-width: 50ch;
+  &:not(footer *) {
+    color: hsl(0, 1%, 40%);
+  }
 }
 
 :root {
-  --box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 11px 21px -4px,
-    rgba(0, 0, 0, 0.3) 0px 6px 11px -6px;
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 body {
@@ -84,9 +84,9 @@ body {
 }
 
 .wrapper {
-  max-width: 1400px;
+  max-width: 1220px;
   margin-inline: auto;
-  padding: 2rem;
+  padding: 2.8rem;
 }
 
 h2 {
@@ -94,15 +94,12 @@ h2 {
 }
 
 .links {
-  align-self: flex-end;
-
   display: flex;
-  flex-shrink: 1;
   gap: 1.1rem;
 }
 
 .links.contact img {
-  max-width: 2rem;
+  max-width: 2.1rem;
 }
 
 .links.project img {
@@ -126,18 +123,16 @@ header {
   & .wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 }
 
 .about-card {
+  flex-grow: 1;
+  
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-
-  max-width: 38rem;
-  max-height: fit-content;
 
   box-shadow: var(--box-shadow);
   background-color: white;
@@ -164,24 +159,31 @@ header {
   }
 }
 
-.about-card p {
-  font-size: 1.25rem;
+.about-card {
+  & p {
+    font-size: 1.25rem;
+  }
+
+  & .links {
+    align-self: self-end;
+  }
 }
 
 /* Projects cards */
 
 .projects ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19.4rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 2rem;
-
+  margin: 1rem 0 2.5rem 0;
+  
   & .project-card {
     box-shadow: var(--box-shadow);
   }
 }
 
 .card-content {
-  padding: 2rem;
+  padding: 1.5rem;
   gap: 1rem;
   display: grid;
   grid-template-areas:
@@ -199,6 +201,41 @@ header {
 
   & > p {
     grid-area: content;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
+}
+
+/* footer */
+footer {
+  background-color: hsl(192, 91%, 36%);
+  color: white;
+  font-size: 1.3rem;
+
+  & .wrapper {
+    display: grid;
+    grid-template-areas: "flex-container img";
+  }
+
+  & .flex-container {
+    grid-area: flex-container;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+}
+
+address {
+  grid-area: address;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+address img {
+  display: inline;
+  margin-right: 0.7rem;
+  position: relative;
+  top: 0.6rem;
 }
