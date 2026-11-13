@@ -63,15 +63,22 @@ h6 {
   font-weight: 300;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 p {
   color: hsl(0, 1%, 40%);
 }
 
 :root {
   --box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 10px 20px -4px,
-    rgba(0, 0, 0, 0.3) 0px 5px 10px -6px;
+    rgba(50, 50, 93, 0.25) 0px 11px 21px -4px,
+    rgba(0, 0, 0, 0.3) 0px 6px 11px -6px;
 }
+
 body {
   font-family: "Roboto";
 }
@@ -79,13 +86,34 @@ body {
 .wrapper {
   max-width: 1400px;
   margin-inline: auto;
-  padding: 3rem;
+  padding: 2rem;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
+.links {
+  align-self: flex-end;
+
+  display: flex;
+  flex-shrink: 1;
+  gap: 1.1rem;
+}
+
+.links.contact img {
+  max-width: 2rem;
+}
+
+.links.project img {
+  max-width: 1.5rem;
+}
+
+/* header */
 header {
   /* This is kinda hacky, so I prefer finding a better way later*/
   background: linear-gradient(
-    173deg,
+    174deg,
     hsl(192, 91%, 36%),
     hsl(192, 91%, 36%) 70%,
     hsl(194, 16%, 79%) 70.2%,
@@ -105,11 +133,12 @@ header {
 .about-card {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
 
-  max-width: 600px;
+  max-width: 38rem;
   max-height: fit-content;
 
-  padding: 1.5rem;
   box-shadow: var(--box-shadow);
   background-color: white;
 }
@@ -135,20 +164,41 @@ header {
   }
 }
 
-.about-card h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .about-card p {
   font-size: 1.25rem;
-  margin-bottom: 3rem;
 }
 
-.contact-links {
-  align-self: flex-end;
-  margin-top: auto;
+/* Projects cards */
 
-  display: flex;
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19.4rem, 1fr));
+  gap: 2rem;
+
+  & .project-card {
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.card-content {
+  padding: 2rem;
   gap: 1rem;
+  display: grid;
+  grid-template-areas:
+    "header links"
+    "content content";
+
+  & > h3 {
+    grid-area: header;
+  }
+
+  & > .links {
+    grid-area: links;
+    justify-self: end;
+  }
+
+  & > p {
+    grid-area: content;
+    margin-bottom: 2rem;
+  }
 }
