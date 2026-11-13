@@ -11,4 +11,4 @@
     Lena Netkach](https://www.pexels.com/@lena-netkach-395486/) on [Pexels](https://www.pexels.com/)
 
 - Fonts : 
-  - `Playfair Display` and `Roboto` from [Google fonts](https://fonts.google.com/)
+  - `Playfair Display` and `Roboto` from [Font Squirrel](https://www.fontsquirrel.com/)
