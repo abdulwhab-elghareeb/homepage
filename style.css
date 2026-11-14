@@ -189,7 +189,7 @@ header {
 
 .projects ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 2rem;
   margin: 1rem 0 2.5rem 0;
 
@@ -223,20 +223,25 @@ header {
 
 /* footer */
 footer {
+  overflow: hidden;
   background-color: hsl(192, 91%, 36%);
   color: white;
   font-size: 1.3rem;
 
-  & .wrapper {
+  .wrapper {
     display: grid;
     grid-template-areas: "flex-container img";
   }
 
-  & .flex-container {
+  .flex-container {
     grid-area: flex-container;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .portrait2 {
+    align-self: center;
   }
 }
 
@@ -255,7 +260,8 @@ address {
   top: 0.6rem;
 }
 
-@media (max-width: 480px) {
+/* mobile */
+@media (max-width: 700px) {
   .wrapper {
     padding: 1rem;
   }
@@ -287,21 +293,74 @@ address {
     .links {
       margin-inline: auto;
     }
+
+    .portrait {
+      margin-inline: -2rem;
+      margin-top: -2rem;
+    }
   }
 
   footer {
     .wrapper {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4rem;
     }
 
     .links {
       margin-inline: auto;
-      margin-bottom: 2rem;
     }
 
     .portrait2 {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1040px) {
+  header {
+    .portrait h1 {
+      max-width: fit-content;
+      background-color: transparent;
+      font-size: 5rem;
+
+      top: 0;
+      right: 0;
+      transform: translateX(65%);
+    }
+
+    .portrait {
       position: absolute;
-      left: 0px;
+      top: 3rem;
+      left: 1rem;
+      width: 28rem;
+    }
+
+    .about-card::before {
+      content: "";
+      width: 25rem;
+      height: 16rem;
+      float: left;
+    }
+
+    .about-card {
+      display: block;
+      margin-top: 10rem;
+      padding-right: 1rem;
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        margin-inline: auto;
+      }
+
+      .links {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
