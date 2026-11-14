@@ -293,11 +293,6 @@ address {
     .links {
       margin-inline: auto;
     }
-
-    .portrait {
-      margin-inline: -2rem;
-      margin-top: -2rem;
-    }
   }
 
   footer {
