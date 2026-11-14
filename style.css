@@ -189,7 +189,8 @@ header {
 
 .projects ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15.8rem, 1fr));
+  justify-content: center;
   gap: 2rem;
   margin-block: 1rem 2.5rem; /* adding space at the top (i.e. h2) and bottom (i.e. footer section) */
 
@@ -229,7 +230,7 @@ footer {
   .wrapper {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
   }
 
   .flex-container {
@@ -256,10 +257,10 @@ address {
   margin-right: 0.7rem;
 }
 
-/* mobile */
-@media (max-width: 775px) {
+/* Mobile */
+@media (max-width: 750px) {
   :root {
-    font-size: 1.2rem; /* Scale the page up 20% */
+    font-size: 120%; /* Scale the page up 20% */
   }
 
   .wrapper {
@@ -288,6 +289,7 @@ address {
 
     .about-card {
       box-shadow: none;
+      background-color: transparent;
     }
 
     .links {
@@ -313,9 +315,10 @@ address {
   }
 }
 
-@media (min-width: 775px) and (max-width: 1024px) {
+/* Tablet */
+@media (min-width: 750px) and (max-width: 1024px) {
   :root {
-    font-size: 1.1rem; /* Scale the page up 10% */
+    font-size: 110%; /* Scale the page up 10% */
   }
 
   header {
@@ -327,7 +330,7 @@ address {
       right: 0;
       transform: translateX(65%); /* to align it like the given design */
     }
-    
+
     /* 
     Because the portrait picture's parent isn't the about-card
     I needed to do this workaround solution to achieve the text wrap effect
@@ -366,5 +369,9 @@ address {
         justify-content: flex-end;
       }
     }
+  }
+
+  footer .wrapper {
+    gap: 1rem;
   }
 }
